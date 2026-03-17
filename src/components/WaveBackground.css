@@ -51,51 +51,51 @@
 }
 
 .wave-bg__stroke--halo-far {
-  stroke: rgba(255, 255, 255, calc(0.045 * var(--wave-glow, 1)));
+  stroke: transparent;
   stroke-width: 40;
   filter: blur(30px);
   transform-box: fill-box;
   transform-origin: center;
-  opacity: 0.5;
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .wave-bg__stroke--halo-near {
-  stroke: rgba(255, 255, 255, calc(0.085 * var(--wave-glow, 1)));
+  stroke: transparent;
   stroke-width: 22;
   filter: blur(10px);
   transform-box: fill-box;
   transform-origin: center;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .wave-bg__stroke--halo-core {
-  stroke: rgba(255, 255, 255, calc(0.16 * var(--wave-glow, 1)));
+  stroke: transparent;
   stroke-width: 10;
   filter: blur(4px);
   transform-box: fill-box;
   transform-origin: center;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .wave-bg__stroke--soft {
-  stroke: rgba(255, 255, 255, calc(0.11 * var(--wave-glow, 1)));
+  stroke: transparent;
   stroke-width: 14;
   filter: blur(3px);
 }
 
 .wave-bg__stroke--main {
-  stroke: rgba(245, 245, 250, calc(0.5 * var(--wave-glow, 1)));
+  stroke: transparent;
   stroke-width: 5;
   filter: blur(0.6px);
 }
 
 .wave-bg__stroke--shine {
-  stroke: rgba(255, 255, 255, calc(0.72 * var(--wave-glow, 1)));
+  stroke: transparent;
   stroke-width: 1.5;
 }
 
-/* One-directional shadow (mostly below the line) */
+/* One-directional shadow — transparent to avoid visible horizontal line */
 .wave-bg__sine::after {
   content: '';
   position: absolute;
@@ -103,40 +103,31 @@
   right: -12%;
   pointer-events: none;
   filter: blur(10px);
-  opacity: 0.7;
+  opacity: 0;
+  background: transparent;
 }
 
 /* Top waves: cast shadow downward */
 .wave-bg__sine--top::after {
   top: 44%;
   height: 56%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.26) 58%,
-    rgba(0, 0, 0, 0.62) 100%
-  );
+  background: transparent;
 }
 
 /* Bottom waves: cast shadow upward */
 .wave-bg__sine--bottom::after {
   top: 0;
   height: 56%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.62) 0%,
-    rgba(0, 0, 0, 0.26) 42%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: transparent;
 }
 
 .wave-bg__sine--variant-a::after {
-  opacity: 0.82;
+  opacity: 0;
 }
 
 .wave-bg__sine--variant-b::after,
 .wave-bg__sine--variant-d::after {
-  opacity: 0.56;
+  opacity: 0;
 }
 
 /* Directional white shadow halos:

@@ -9,6 +9,8 @@ import {
   TrophyToast,
   KeyboardClose,
   WaveBackground,
+  BackgroundMusic,
+  Controller,
   AboutSection,
   PortfolioSection,
   CVSection,
@@ -21,13 +23,14 @@ export default function App() {
   const openSection = (id) => setActiveSection(id)
   const closeSection = () => setActiveSection(null)
 
-  const portfolioPdf = MENU_ITEMS.find((i) => i.id === 'portfolio')?.pdf ?? '/portfolio.pdf'
   const cvPdf = MENU_ITEMS.find((i) => i.id === 'cv')?.pdf ?? '/cv.pdf'
 
   return (
     <div className="app">
+      <BackgroundMusic />
       <WaveBackground />
-      <TrophyToast title="Fashion Junkie" />
+      <TrophyToast />
+      <Controller />
       <MenuBar
         items={MENU_ITEMS}
         activeSectionId={activeSection}
@@ -38,7 +41,7 @@ export default function App() {
 
       {activeSection === 'about' && <AboutSection onBack={closeSection} />}
       {activeSection === 'portfolio' && (
-        <PortfolioSection onBack={closeSection} pdfUrl={portfolioPdf} />
+        <PortfolioSection onBack={closeSection} />
       )}
       {activeSection === 'cv' && (
         <CVSection onBack={closeSection} pdfUrl={cvPdf} />

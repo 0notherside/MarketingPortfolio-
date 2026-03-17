@@ -1,10 +1,10 @@
 import SectionPanel from '../SectionPanel'
 
 const DEFAULT_DETAILS = [
-  { label: 'Email', value: 'your.email@example.com' },
-  { label: 'Phone', value: '+1 234 567 8900' },
-  { label: 'Location', value: 'City, Country' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/yourprofile', link: 'https://linkedin.com' },
+  { label: 'Email', value: 'ivankrylov.mailbox2@gmail.com', link: 'mailto:ivankrylov.mailbox2@gmail.com' },
+  { label: 'Phone', value: '+44(0)7765015306', link: 'tel:+447765015306' },
+  { label: 'Location', value: 'Slough, England' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/ivan-krylov1', link: 'https://www.linkedin.com/in/ivan-krylov1/' },
 ]
 
 export default function PersonalDetailsSection({ onBack, details = DEFAULT_DETAILS }) {
@@ -20,9 +20,6 @@ export default function PersonalDetailsSection({ onBack, details = DEFAULT_DETAI
           </li>
         ))}
       </ul>
-      <p className="section-hint">
-        Edit the <code>details</code> prop in <code>src/App.jsx</code> or this file to add your real contact info.
-      </p>
     </SectionPanel>
   )
 }
