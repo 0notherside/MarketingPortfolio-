@@ -1,11 +1,13 @@
 import SectionPanel from '../SectionPanel'
 
 export default function PortfolioSection({ onBack }) {
+  const assetBase = import.meta.env.BASE_URL
+
   return (
     <SectionPanel title="Portfolio" titleId="portfolio-title" onBack={onBack}>
       <div className="portfolio-list">
         <a
-          href="/portfolio-strategy.pdf"
+          href={`${assetBase}portfolio-strategy.pdf`}
           download="Portfolio-Strategy.pdf"
           className="portfolio-card portfolio-card--strategy"
           aria-label="Download Portfolio Strategy (PDF)"
@@ -17,7 +19,7 @@ export default function PortfolioSection({ onBack }) {
         </a>
 
         <a
-          href="/portfolio-assets.pdf"
+          href={`${assetBase}portfolio-assets.pdf`}
           download="Portfolio-Assets.pdf"
           className="portfolio-card portfolio-card--assets"
           aria-label="Download Portfolio Assets (PDF)"

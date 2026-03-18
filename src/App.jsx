@@ -23,7 +23,9 @@ export default function App() {
   const openSection = (id) => setActiveSection(id)
   const closeSection = () => setActiveSection(null)
 
-  const cvPdf = MENU_ITEMS.find((i) => i.id === 'cv')?.pdf ?? '/cv.pdf'
+  const assetBase = import.meta.env.BASE_URL
+  const cvPdfPath = MENU_ITEMS.find((i) => i.id === 'cv')?.pdf ?? 'cv.pdf'
+  const cvPdf = `${assetBase}${cvPdfPath}`
 
   return (
     <div className="app">

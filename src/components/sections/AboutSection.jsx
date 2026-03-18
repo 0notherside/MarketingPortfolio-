@@ -1,11 +1,13 @@
 import SectionPanel from '../SectionPanel'
 
 export default function AboutSection({ onBack }) {
+  const assetBase = import.meta.env.BASE_URL
+
   return (
     <SectionPanel title="About Me" titleId="about-title" onBack={onBack}>
       <div className="about-section">
         <img
-          src="/about-photo.png"
+          src={`${assetBase}about-photo.png`}
           alt="Profile photo"
           className="about-section__photo"
         />

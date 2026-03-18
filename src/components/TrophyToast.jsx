@@ -24,6 +24,7 @@ function playTrophySound() {
 
 export default function TrophyToast() {
   const soundPlayed = useRef(false)
+  const assetBase = import.meta.env.BASE_URL
 
   useEffect(() => {
     if (soundPlayed.current) return
@@ -34,7 +35,7 @@ export default function TrophyToast() {
   return (
     <div className="trophy-toast" role="status">
       <img
-        src="/trophy-toast.png"
+        src={`${assetBase}trophy-toast.png`}
         alt="You have earned a trophy. Fashion Junkie"
         className="trophy-toast__img"
       />

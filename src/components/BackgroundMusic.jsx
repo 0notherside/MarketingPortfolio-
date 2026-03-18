@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 export default function BackgroundMusic() {
   const audioRef = useRef(null)
   const startedRef = useRef(false)
+  const assetBase = import.meta.env.BASE_URL
 
   const tryStart = () => {
     const audio = audioRef.current
@@ -36,6 +37,6 @@ export default function BackgroundMusic() {
   }, [])
 
   return (
-    <audio ref={audioRef} src="/bg-music.mp3" preload="auto" loop aria-hidden />
+    <audio ref={audioRef} src={`${assetBase}bg-music.mp3`} preload="auto" loop aria-hidden />
   )
 }
