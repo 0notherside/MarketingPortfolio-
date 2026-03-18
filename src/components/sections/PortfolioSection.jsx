@@ -3,27 +3,30 @@ import SectionPanel from '../SectionPanel'
 export default function PortfolioSection({ onBack }) {
   return (
     <SectionPanel title="Portfolio" titleId="portfolio-title" onBack={onBack}>
-      <div className="portfolio-pills">
-        <img
-          src="/portfolio-pills.png"
-          alt=""
-          className="portfolio-pills__img"
-        />
+      <div className="portfolio-list">
         <a
           href="/portfolio-strategy.pdf"
           download="Portfolio-Strategy.pdf"
-          className="portfolio-pill-btn portfolio-pill-btn--red"
+          className="portfolio-card portfolio-card--strategy"
           aria-label="Download Portfolio Strategy (PDF)"
         >
-          Portfolio Strategy
+          <div className="portfolio-card__text">
+            <h2>Portfolio Strategy</h2>
+            <p>Download strategic marketing campaigns and case studies.</p>
+          </div>
         </a>
-        <button
-          type="button"
-          className="portfolio-pill-btn portfolio-pill-btn--blue"
-          aria-label="Portfolio Assets"
+
+        <a
+          href="/portfolio-assets.pdf"
+          download="Portfolio-Assets.pdf"
+          className="portfolio-card portfolio-card--assets"
+          aria-label="Download Portfolio Assets (PDF)"
         >
-          Portfolio Assets
-        </button>
+          <div className="portfolio-card__text">
+            <h2>Portfolio Assets</h2>
+            <p>Creative assets and visual work samples.</p>
+          </div>
+        </a>
       </div>
     </SectionPanel>
   )

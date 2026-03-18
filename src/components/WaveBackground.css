@@ -178,23 +178,35 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.36);
   box-shadow: 0 0 8px rgba(220, 235, 255, 0.24);
-  animation: particleFloat 10s ease-in-out infinite;
+  animation: particleFloat 6s linear infinite;
   opacity: 0.4;
 }
 
 .wave-bg__particle:nth-child(odd) {
   width: 1px;
   height: 1px;
-  animation-duration: 8s;
-  animation-delay: calc(var(--i) * 0.18s);
+  animation-duration: 4.8s;
+  animation-delay: calc(var(--i) * 0.1s);
 }
 
 .wave-bg__particle:nth-child(3n) {
   width: 3px;
   height: 3px;
   opacity: 0.32;
-  animation-duration: 12s;
+  animation-duration: 7.2s;
   box-shadow: 0 0 10px rgba(220, 235, 255, 0.22);
+}
+
+.wave-bg__particle:nth-child(4n) {
+  animation-name: particleFallLeft;
+}
+
+.wave-bg__particle:nth-child(5n) {
+  animation-name: particleFallRight;
+}
+
+.wave-bg__particle:nth-child(6n) {
+  animation-name: particleDriftUp;
 }
 
 @keyframes particleFloat {
@@ -206,6 +218,48 @@
   50% {
     opacity: 0.65;
     transform: translate(6px, -9px);
+  }
+}
+
+@keyframes particleFallLeft {
+  0% {
+    opacity: 0.08;
+    transform: translate(10px, -18px);
+  }
+  50% {
+    opacity: 0.58;
+  }
+  100% {
+    opacity: 0.12;
+    transform: translate(-14px, 22px);
+  }
+}
+
+@keyframes particleFallRight {
+  0% {
+    opacity: 0.1;
+    transform: translate(-12px, -16px);
+  }
+  50% {
+    opacity: 0.62;
+  }
+  100% {
+    opacity: 0.12;
+    transform: translate(16px, 24px);
+  }
+}
+
+@keyframes particleDriftUp {
+  0% {
+    opacity: 0.12;
+    transform: translate(0, 10px);
+  }
+  50% {
+    opacity: 0.56;
+  }
+  100% {
+    opacity: 0.1;
+    transform: translate(8px, -20px);
   }
 }
 

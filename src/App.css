@@ -388,67 +388,67 @@
   margin-bottom: 0;
 }
 
-.portfolio-pills {
-  position: relative;
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 640px;
+}
+
+.portfolio-card {
+  width: 100%;
+  padding: 1.1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  box-shadow:
+    0 0 18px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 72vh;
-  width: 100%;
-  max-width: min(560px, 88vw);
-  margin: 0 auto;
-}
-
-.portfolio-pills__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 78vh;
-  object-fit: contain;
-  object-position: center center;
-  pointer-events: none;
-}
-
-.portfolio-pill-btn {
-  position: absolute;
-  bottom: 22%;
-  width: 22%;
-  max-width: 130px;
-  padding: 0.7rem 0.35rem;
-  font-family: var(--font-display);
-  font-size: 0.52rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.2;
-  color: #fff;
+  justify-content: space-between;
   text-decoration: none;
-  border: none;
-  border-radius: 999px;
+  color: var(--text);
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-/* Red pill – character's right hand (viewer's left) */
-.portfolio-pill-btn--red {
-  left: 22%;
-  right: auto;
-  background: linear-gradient(180deg, #e53935 0%, #b71c1c 100%);
+.portfolio-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
-/* Blue pill – character's left hand (viewer's right) */
-.portfolio-pill-btn--blue {
-  right: 22%;
-  left: auto;
-  background: linear-gradient(180deg, #1e88e5 0%, #0d47a1 100%);
+.portfolio-card__text h2 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.portfolio-pill-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5);
-  filter: brightness(1.15);
+.portfolio-card__text p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.portfolio-card--strategy {
+  border-color: rgba(255, 107, 157, 0.7);
+}
+
+.portfolio-card--assets {
+  border-color: rgba(180, 220, 255, 0.6);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 24px rgba(180, 220, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .section-panel .section-hint {
