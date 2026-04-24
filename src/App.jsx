@@ -13,19 +13,34 @@ import {
   Controller,
   AboutSection,
   PortfolioSection,
-  CVSection,
   PersonalDetailsSection,
 } from './components'
 
 export default function App() {
   const [activeSection, setActiveSection] = useState(null)
 
-  const openSection = (id) => setActiveSection(id)
-  const closeSection = () => setActiveSection(null)
-
   const assetBase = import.meta.env.BASE_URL
   const cvPdfPath = MENU_ITEMS.find((i) => i.id === 'cv')?.pdf ?? 'cv.pdf'
   const cvPdf = `${assetBase}${cvPdfPath}`
+
+  const closeSection = () => setActiveSection(null)
+  const triggerDownload = (url, filename) => {
+    const link = document.createElement('a')
+    link.href = url
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+  }
+
+  const openSection = (id) => {
+    if (id === 'cv') {
+      triggerDownload(cvPdf, 'cv.pdf')
+      return
+    }
+
+    setActiveSection(id)
+  }
 
   return (
     <div className="app">
@@ -44,9 +59,6 @@ export default function App() {
       {activeSection === 'about' && <AboutSection onBack={closeSection} />}
       {activeSection === 'portfolio' && (
         <PortfolioSection onBack={closeSection} />
-      )}
-      {activeSection === 'cv' && (
-        <CVSection onBack={closeSection} pdfUrl={cvPdf} />
       )}
       {activeSection === 'details' && <PersonalDetailsSection onBack={closeSection} />}
 

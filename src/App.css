@@ -201,6 +201,110 @@
   color: var(--highlight);
 }
 
+/* Top-left audio volume control — PlayStation-inspired */
+.music-volume {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: min(220px, calc(100vw - 1.4rem));
+  padding: 0.45rem 0.65rem;
+  border-radius: 12px;
+  border: 1px solid rgba(180, 220, 255, 0.28);
+  background: linear-gradient(145deg, rgba(26, 28, 36, 0.9) 0%, rgba(12, 14, 20, 0.95) 100%);
+  box-shadow: 0 0 14px rgba(130, 180, 255, 0.15);
+  color: var(--accent);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.music-volume:hover {
+  border-color: rgba(180, 220, 255, 0.5);
+  box-shadow: 0 0 18px rgba(130, 180, 255, 0.22);
+}
+
+.music-volume__icons {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  opacity: 0.95;
+}
+
+.music-volume__label {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--accent);
+}
+
+.music-volume__range {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(130, 180, 255, 0.24) 0%, rgba(130, 180, 255, 0.58) 100%);
+  outline: none;
+}
+
+.music-volume__range::-webkit-slider-thumb {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(210, 230, 255, 0.8);
+  background: #bdd8ff;
+  box-shadow: 0 0 10px rgba(130, 180, 255, 0.65);
+  cursor: pointer;
+}
+
+.music-volume__range::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(210, 230, 255, 0.8);
+  background: #bdd8ff;
+  box-shadow: 0 0 10px rgba(130, 180, 255, 0.65);
+  cursor: pointer;
+}
+
+.music-volume__range:focus-visible {
+  outline: 2px solid rgba(180, 220, 255, 0.75);
+  outline-offset: 3px;
+}
+
+.music-mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 121;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(180, 220, 255, 0.42);
+  background: linear-gradient(145deg, rgba(26, 28, 36, 0.92) 0%, rgba(12, 14, 20, 0.96) 100%);
+  color: var(--accent);
+  font-size: 0.88rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(130, 180, 255, 0.22);
+}
+
+.music-mobile-toggle.is-muted {
+  color: var(--text-dim);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.music-mobile-toggle:focus-visible {
+  outline: 2px solid rgba(180, 220, 255, 0.75);
+  outline-offset: 2px;
+}
+
 /* Controller — bottom-left, pops up from darkness */
 .controller {
   position: fixed;
@@ -595,6 +699,13 @@
     right: 1rem;
   }
 
+  .music-volume {
+    top: 0.8rem;
+    left: 0.8rem;
+    width: min(200px, calc(100vw - 1.3rem));
+    padding: 0.4rem 0.55rem;
+  }
+
   .trophy-toast__img {
     max-width: 220px;
     max-height: 62px;
@@ -665,6 +776,26 @@
     top: 0.75rem;
     right: 0.75rem;
     border-radius: 8px;
+  }
+
+  .music-volume {
+    top: 0.65rem;
+    left: 0.65rem;
+    width: min(184px, calc(100vw - 1.15rem));
+  }
+
+  .music-volume__label {
+    font-size: 0.54rem;
+  }
+
+  .music-volume {
+    display: none;
+  }
+
+  .music-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .trophy-toast__img {
