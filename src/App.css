@@ -532,14 +532,29 @@
 }
 
 @media (max-width: 768px) {
+  .app {
+    justify-content: flex-start;
+    padding: 1.25rem 0.75rem 5rem;
+  }
+
   .menu-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 1.5rem;
+    gap: 1.15rem;
+    max-width: 640px;
   }
 
   .menu-layout__center {
     order: 0;
+  }
+
+  .hero {
+    max-width: min(320px, 84vw);
+    max-height: min(420px, 52vh);
+  }
+
+  .hero-avatar {
+    max-height: min(420px, 52vh);
   }
 
   .menu-bar__column--left,
@@ -564,12 +579,188 @@
   }
 
   .menu-btn {
-    min-width: 196px;
+    min-width: 170px;
+    padding: 0.85rem 1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+  }
+
+  .controller {
+    width: clamp(150px, 35vw, 220px);
+    opacity: 0.78;
+  }
+
+  .trophy-toast {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .trophy-toast__img {
+    max-width: 220px;
+    max-height: 62px;
+  }
+
+  .section-panel {
+    padding: 1.25rem 1rem 2.5rem;
+  }
+
+  .section-panel .back-btn {
+    margin-bottom: 1.25rem;
+  }
+
+  .section-panel .content,
+  .about-section,
+  .portfolio-list {
+    max-width: 100%;
+  }
+
+  .portfolio-card {
+    padding: 1rem 1rem;
+  }
+
+  .details-list .label {
+    min-width: 92px;
   }
 }
 
 @media (max-width: 600px) {
+  .app {
+    padding: 1rem 0.75rem 4.5rem;
+  }
+
+  .menu-layout {
+    gap: 1rem;
+  }
+
+  .menu-bar__column--left,
+  .menu-bar__column--right {
+    gap: 0.65rem;
+  }
+
+  .menu-btn {
+    min-width: 142px;
+    padding: 0.75rem 0.85rem;
+    font-size: 0.76rem;
+  }
+
+  .menu-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero {
+    max-width: min(280px, 84vw);
+    max-height: min(340px, 46vh);
+  }
+
+  .hero-avatar {
+    max-height: min(340px, 46vh);
+  }
+
+  .controller {
+    display: none;
+  }
+
+  .trophy-toast {
+    top: 0.75rem;
+    right: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .trophy-toast__img {
+    max-width: 180px;
+    max-height: 50px;
+  }
+
   .nav-hint {
+    bottom: 0.8rem;
+    right: 0.8rem;
     font-size: 0.81rem;
+    letter-spacing: 0.06em;
+  }
+
+  .nav-hint .key {
+    width: 26px;
+    height: 26px;
+    font-size: 0.72rem;
+  }
+
+  .section-panel {
+    padding: 1rem 0.9rem 2rem;
+  }
+
+  .section-panel h1 {
+    margin-bottom: 1rem;
+  }
+
+  .section-panel .content,
+  .about-section__text {
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .about-section {
+    gap: 1rem;
+  }
+
+  .about-section__photo {
+    width: 108px;
+    height: 108px;
+  }
+
+  .portfolio-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .portfolio-card__text h2 {
+    font-size: 0.78rem;
+  }
+
+  .portfolio-card__text p {
+    font-size: 0.74rem;
+  }
+
+  .download-row {
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .details-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    padding: 0.6rem 0;
+  }
+
+  .details-list .label {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .menu-bar__column--left,
+  .menu-bar__column--right {
+    width: 100%;
+  }
+
+  .hero {
+    max-width: min(240px, 82vw);
+    max-height: min(300px, 44vh);
+  }
+
+  .hero-avatar {
+    max-height: min(300px, 44vh);
   }
 }
