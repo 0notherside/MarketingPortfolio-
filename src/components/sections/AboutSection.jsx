@@ -16,7 +16,7 @@ export default function AboutSection({ onBack }) {
             Performance-focused Digital Marketing Specialist with a proven track record of delivering multi-brand campaigns and driving significant audience growth at Sanofi CHC UK. Having lived in the UK since 2015, I possess a deep understanding of the local market landscape, combined with a highly adaptable, friendly, and communicative approach to professional collaboration.
           </p>
           <p>
-            I specialise in paid media, content optimisation, and market analysis using tools such as Nielsen Ad Intel and Google Analytics 4. I am experienced in managing complex budgets, boosting engagement, and translating data into actionable strategy. A strong collaborator with a creative edge, I combine technical marketing expertise with 3D design and digital content production to develop innovative, high-impact marketing solutions.
+            Beyond performance marketing, I bring a people-first mindset and positive energy to every project. I am naturally communicative, friendly, and comfortable working across teams, whether we are building strategy or creating content. Outside work, I am into vibe coding, AI automation, airsoft, gaming, streaming, design, and fashion, and I use those interests to keep my ideas fresh, relevant, and creative. I am also working toward launching my own clothing brand and building it into a meaningful long-term venture.
           </p>
         </div>
       </div>
